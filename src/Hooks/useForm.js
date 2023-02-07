@@ -7,14 +7,14 @@ const useForm = (callbackSubmitForm) => {
 
   const validate = (event, name, value) => {
     switch (name) {
-      case "username":
+      case "name":
         if (value.length === 0) {
           setErrors({
             ...errors,
-            username: "Full name is required",
+            name: "Full name is required",
           });
         } else {
-          let userField = omit(errors, "username");
+          let userField = omit(errors, "name");
           setErrors(userField);
         }
         break;

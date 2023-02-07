@@ -69,8 +69,8 @@ const Home = () => {
           name="name"
           sx={{ fieldset: { border: "none" } }}
           onChange={(event) => handleChange(event)}
-          error={errors.username && errors.username.length > 0}
-          helperText={errors.username}
+          error={errors.name && errors.name.length > 0}
+          helperText={errors.name}
           margin="normal"
           placeholder="Full name"
           size="small"
