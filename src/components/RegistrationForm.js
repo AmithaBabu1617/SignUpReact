@@ -47,7 +47,10 @@ const Home = () => {
   const formLogin = () => {
     dispatch(getUser(values))
       .unwrap()
-      .then(() => navigate("/welcome"));
+      .then(() => navigate("/welcome"))
+      .catch((err) => {
+        alert("User Not Found");
+      });
   };
 
   const { handleChange, values, errors, handleSubmit } = useForm(formLogin);
