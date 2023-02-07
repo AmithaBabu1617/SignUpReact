@@ -6,10 +6,10 @@ Created sign up page as shown in https://www.google.com/url?q=https://dribbble.c
 
 Followig are the requirements to run this project:
 
-Node Package Manager (NPM)
-React
-React-Redux
-react-router-dom
+> Node Package Manager (NPM)
+> React
+> React-Redux
+> react-router-dom
 
 ## How to use
 
