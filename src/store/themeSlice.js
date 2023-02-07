@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 const initialState = {
   darkMode: !!JSON.parse(localStorage.getItem("darkMode")),
@@ -14,11 +14,14 @@ export const themeSlice = createSlice({
   },
 });
 
-export const asyncToggleTheme = () => (dispatch) => {
-  const isDarkMode = !!JSON.parse(localStorage.getItem("darkMode"));
-  localStorage.setItem("darkMode", !isDarkMode);
-  dispatch(toggleTheme());
-};
+export const asyncToggleTheme = createAsyncThunk(
+  "theme/toggleTheme",
+  async (_, thunkAPI) => {
+    const isDarkMode = !!JSON.parse(localStorage.getItem("darkMode"));
+    localStorage.setItem("darkMode", !isDarkMode);
+    thunkAPI.dispatch(toggleTheme());
+  }
+);
 
 export const { toggleTheme } = themeSlice.actions;
 

@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useState, useMemo } from "react";
 import { useSelector } from "react-redux";
 import { Outlet } from "react-router-dom";
 import { CssBaseline } from "@mui/material";
@@ -47,10 +47,19 @@ const getDesignTokens = (mode) => ({
 });
 
 const RootLayout = () => {
+  const [mode, setMode] = useState("light");
   const darkMode = useSelector((state) => state.theme.darkMode);
-  const mode = darkMode ? "dark" : "light";
+
+  useMemo(() => {
+    if (darkMode) {
+      setMode("dark");
+    } else {
+      setMode("light");
+    }
+  }, [darkMode]);
 
   const theme = useMemo(() => createTheme(getDesignTokens(mode)), [mode]);
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
