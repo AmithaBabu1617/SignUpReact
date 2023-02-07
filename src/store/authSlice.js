@@ -31,14 +31,14 @@ const authSlice = createSlice({
   name: "authentication",
   initialState: initialAuthState,
   reducers: {},
-  extraReducers: {
-    [getUser.fulfilled]: (state, { payload }) => {
-      state.loading = false;
-      state.loggedInUser = payload;
-    },
-    [getUser.rejected]: (state) => {
-      state.loggedInUser = [];
-    },
+  extraReducers: (builder) => {
+    builder
+      .addCase(getUser.fulfilled, (state, action) => {
+        state.loggedInUser = action.payload;
+      })
+      .addCase(getUser.rejected, (state, action) => {
+        state.loggedInUser = [];
+      });
   },
 });
 

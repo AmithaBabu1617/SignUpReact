@@ -15,16 +15,19 @@ export default function SocialMediaLinks() {
     fontWeight: 600,
     backgroundColor: theme.palette.mode === "dark" ? "#fff" : "#FFDEDE",
     height: 40,
+    [theme.breakpoints.down("md")]: {
+      width: "100%",
+    },
   }));
 
   return (
     <Stack
-      direction="row"
+      direction={{ sm: "column", md: "row" }}
       justifyContent="space-between"
       alignItems="center"
       textAlign="center"
       width="100%"
-      spacing={2}
+      spacing={{ xs: 1, md: 2 }}
     >
       <ColorButton
         variant="contained"

@@ -7,7 +7,11 @@ const WelcomePage = () => {
   return (
     <Container>
       <h1>Welcome {user.firstName}</h1>
-      <Button component="a" href="/" sx={{ color: "#fff" }}>
+      <Button
+        component="a"
+        href="/"
+        sx={{ color: (theme) => theme.palette.text.primary }}
+      >
         Back to Login
       </Button>
     </Container>

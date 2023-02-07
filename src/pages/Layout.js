@@ -55,7 +55,6 @@ const Layout = ({ children }) => {
 
   return (
     <Container
-      className="example-anime"
       sx={{
         display: "flex",
         justifyContent: "center",
@@ -88,8 +87,7 @@ const Layout = ({ children }) => {
           >
             <Box
               sx={{
-                mx: "30px",
-                my: "20px",
+                p: "2rem 3rem",
               }}
             >
               <Stack

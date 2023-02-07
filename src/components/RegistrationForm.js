@@ -111,7 +111,11 @@ const Home = () => {
                   onMouseDown={handleMouseDownPassword}
                   edge="end"
                 >
-                  {showPassword ? <VisibilityOff /> : <Visibility />}
+                  {showPassword ? (
+                    <VisibilityOff sx={{ fontSize: "1rem" }} />
+                  ) : (
+                    <Visibility sx={{ fontSize: "1rem" }} />
+                  )}
                 </IconButton>
               </InputAdornment>
             ),
