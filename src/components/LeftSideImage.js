@@ -18,6 +18,7 @@ const LeftSideImage = () => {
           t.palette.mode === "light" ? t.palette.grey[50] : t.palette.grey[900],
         backgroundSize: "100% 100%",
         backgroundPosition: "center",
+        borderRadius: "25px 0 0 25px",
       }}
     />
   );

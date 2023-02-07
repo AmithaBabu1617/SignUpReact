@@ -14,7 +14,7 @@ import LeftSideImage from "../components/LeftSideImage";
 import RegistrationForm from "../components/RegistrationForm";
 import SocialMediaLinks from "../components/SocialMediaIcons";
 
-const Layout = ({ children }) => {
+const Layout = () => {
   const ColoredLine = styled(Box)(({ theme }) => ({
     borderColor: theme.palette.divider,
     backgroundColor: theme.palette.divider,
@@ -59,7 +59,7 @@ const Layout = ({ children }) => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        minHeight: "100vh",
+        height: "100vh",
       }}
     >
       <Box
@@ -67,7 +67,13 @@ const Layout = ({ children }) => {
           minWidth: "100%",
         }}
       >
-        <Grid container>
+        <Grid
+          container
+          sx={{
+            boxShadow: "rgb(0 0 0 / 24%) 0px 3px 8px",
+            borderRadius: "25px",
+          }}
+        >
           <LeftSideImage />
           <Grid
             item
@@ -83,6 +89,8 @@ const Layout = ({ children }) => {
                 theme.palette.mode === "light"
                   ? "radial-gradient(ellipse at 51% 83%, #FFFFFF 82%, #DCEAF3 91%, #FAE2FD 100%);"
                   : "radial-gradient(circle at 51% 88%, #1E0B4C 42%, #31316B 81%, #451351 99%)",
+              boxShadow: "none",
+              borderRadius: { xs: "25px", sm: "25px", md: "0px 25px 25px 0px" },
             }}
           >
             <Box
