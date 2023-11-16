@@ -59,6 +59,7 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 const ToggleMode = () => {
   const dispatch = useDispatch();
   const darkMode = useSelector((state) => state.theme.darkMode);
+  const label = { inputProps: { "aria-label": "toggle-theme" } };
 
   return (
     <FormControlLabel
@@ -66,6 +67,7 @@ const ToggleMode = () => {
         <MaterialUISwitch
           onClick={() => dispatch(asyncToggleTheme())}
           checked={darkMode}
+          {...label}
         />
       }
     />

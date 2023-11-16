@@ -38,6 +38,7 @@ const Home = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [showPassword, setShowPassword] = useState(false);
+  const [name, setName] = useState("testing");
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
   const handleMouseDownPassword = (event) => {
@@ -45,14 +46,32 @@ const Home = () => {
   };
 
   const formLogin = () => {
-    dispatch(getUser(values))
-      .unwrap()
-      .then(() => navigate("/welcome"))
-      .catch((err) => {
-        alert("User Not Found");
-      });
+    setName("amithaBabu");
+    setName("mariyamma");
+    setName("babu");
+    setName("babu");
+    console.log("name--", name);
+    // dispatch(getUser(values))
+    //   .unwrap()
+    //   .then(() => navigate("/welcome"))
+    //   .catch((err) => {
+    //     alert("User Not Found");
+    //   });
+    navigate("/welcome");
   };
-
+  // const obj = {
+  //   name: "amitha",
+  //   address: {
+  //     country: "India",
+  //     pinCode: "000dsad",
+  //   },
+  // };
+  // obj.qualification = "BTech";
+  // const obj2 = obj;
+  // obj.experience = "2";
+  // console.log(obj2);
+  // // const { name, address } = obj;
+  // // console.log(" address--", address);
   const { handleChange, values, errors, handleSubmit } = useForm(formLogin);
 
   return (
@@ -100,7 +119,7 @@ const Home = () => {
           placeholder="Password"
           margin="normal"
           onChange={(event) => handleChange(event)}
-          error={errors.password && errors.password.length > 0}
+          error={true}
           helperText={errors.password}
           InputProps={{
             endAdornment: (
